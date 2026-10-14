@@ -1,0 +1,247 @@
+.menubar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 24px;
+  height: 60px;
+  background: #ffffff;
+  border-bottom: 1px solid #e3e5e8;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+.menubar__brand {
+  display: flex;
+  align-items: center;
+}
+
+.menubar__logo {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+/* ---------- Nav links ---------- */
+.menubar__links {
+  display: flex;
+  gap: 8px;
+}
+
+.menubar .menubar__link {
+  padding: 8px 14px;
+  border-radius: 6px;
+  color: #4a5059;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background 0.15s, color 0.15s;
+}
+
+.menubar .menubar__link:hover {
+  background: #f1f3f5;
+  color: #1a1d21;
+}
+
+.menubar .menubar__link.is-active,
+.menubar .menubar__link.is-active:hover {
+  background: #e8f0fe;
+  color: #1a56db;
+  font-weight: 600;
+}
+
+/* ---------- Right side: cart + auth + hamburger ---------- */
+.menubar__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menubar__cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.menubar__cart:hover {
+  background: #f1f3f5;
+}
+
+.menubar__cart-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.menubar__badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background: #e03131;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+}
+
+/* ---------- Login / Register ---------- */
+.menubar__auth {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* thin divider between the cart and the auth buttons */
+.menubar__auth--desktop {
+  margin-left: 8px;
+  padding-left: 16px;
+  border-left: 1px solid #e3e5e8;
+}
+
+.menubar__auth--mobile {
+  display: none;
+}
+
+/* ".menubar" prefix beats the global a / a:hover rules from index.css */
+.menubar .menubar__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 38px;
+  padding: 0 18px;
+  border: 1.5px solid transparent;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.menubar .menubar__btn:active {
+  transform: translateY(1px);
+}
+
+/* Login: outlined */
+.menubar .menubar__btn--ghost,
+.menubar .menubar__btn--ghost:visited {
+  color: #1a56db;
+  border-color: #1a56db;
+  background: transparent;
+}
+
+.menubar .menubar__btn--ghost:hover {
+  color: #1a56db;
+  background: #e8f0fe;
+}
+
+/* Register: filled */
+.menubar .menubar__btn--solid,
+.menubar .menubar__btn--solid:visited {
+  color: #ffffff;
+  border-color: #1a56db;
+  background: #1a56db;
+}
+
+.menubar .menubar__btn--solid:hover {
+  color: #ffffff;
+  border-color: #1647b8;
+  background: #1647b8;
+}
+
+/* ---------- Keyboard focus ---------- */
+.menubar__link:focus-visible,
+.menubar__brand:focus-visible,
+.menubar__cart:focus-visible,
+.menubar__btn:focus-visible,
+.menubar__toggle:focus-visible {
+  outline: 2px solid #1a56db;
+  outline-offset: 2px;
+}
+
+/* ---------- Hamburger (hidden on desktop) ---------- */
+.menubar__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.menubar__toggle span {
+  width: 22px;
+  height: 2px;
+  background: #1a1d21;
+  border-radius: 2px;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 720px) {
+  .menubar__toggle {
+    display: flex;
+  }
+
+  .menubar__links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 16px 16px;
+    background: #ffffff;
+    border-bottom: 1px solid #e3e5e8;
+    display: none;
+  }
+
+  .menubar__links.is-open {
+    display: flex;
+  }
+
+  .menubar .menubar__link {
+    padding: 12px 14px;
+  }
+
+  /* hide the bar version of the buttons, show the dropdown version */
+  .menubar__auth--desktop {
+    display: none;
+  }
+
+  .menubar__auth--mobile {
+    display: flex;
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 1px solid #e3e5e8;
+  }
+
+  .menubar .menubar__auth--mobile .menubar__btn {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .menubar {
+    padding: 0 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menubar .menubar__link,
+  .menubar .menubar__btn {
+    transition: none;
+  }
+}

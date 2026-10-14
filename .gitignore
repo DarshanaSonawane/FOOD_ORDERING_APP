@@ -1,0 +1,25 @@
+
+# Node.js frontends
+node_modules/
+dist/
+build/
+
+# Spring Boot / Java
+target/
+build/
+.gradle/
+*.class
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+application-local.properties
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# Logs
+*.log

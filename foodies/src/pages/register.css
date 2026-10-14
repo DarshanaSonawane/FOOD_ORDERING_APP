@@ -1,0 +1,174 @@
+.register {
+  display: flex;
+  justify-content: center;
+  padding: 48px 20px;
+}
+
+.register__card {
+  width: 100%;
+  max-width: 420px;
+  padding: 32px 28px;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+.register__title {
+  margin: 0 0 6px;
+}
+
+.register__subtitle {
+  margin: 0 0 22px;
+  color: #777;
+}
+
+.register__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.register__field label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.register__field input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.register__field input:focus {
+  outline: none;
+  border-color: tomato;
+}
+
+.register__password {
+  position: relative;
+}
+
+.register__password input {
+  padding-right: 64px;
+}
+
+.register__toggle {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  padding: 4px 6px;
+  border: none;
+  background: none;
+  color: tomato;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* password strength */
+.register__strength {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.register__bars {
+  display: flex;
+  flex: 1;
+  gap: 4px;
+}
+
+.register__bars span {
+  flex: 1;
+  height: 5px;
+  border-radius: 3px;
+  background: #e5e5e5;
+}
+
+.register__bars.level-0 span:nth-child(-n + 1) {
+  background: #d93025;
+}
+
+.register__bars.level-1 span:nth-child(-n + 1) {
+  background: #e8710a;
+}
+
+.register__bars.level-2 span:nth-child(-n + 2) {
+  background: #f9ab00;
+}
+
+.register__bars.level-3 span:nth-child(-n + 3) {
+  background: #7cb342;
+}
+
+.register__bars.level-4 span {
+  background: #1e8e3e;
+}
+
+.register__strength small {
+  min-width: 56px;
+  color: #666;
+}
+
+.register__error {
+  color: #d93025;
+  font-size: 0.8rem;
+}
+
+.register__server-error {
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #fdecea;
+  color: #b3261e;
+  font-size: 0.9rem;
+}
+
+.register__success {
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #e6f4ea;
+  color: #1e7e34;
+  font-size: 0.9rem;
+}
+
+.register__submit {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: tomato;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.register__submit:hover:not(:disabled) {
+  background: #e5533d;
+}
+
+.register__submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.register__footer {
+  margin: 18px 0 0;
+  text-align: center;
+  color: #666;
+}
+
+.register__footer a {
+  color: tomato;
+  font-weight: 600;
+  text-decoration: none;
+}

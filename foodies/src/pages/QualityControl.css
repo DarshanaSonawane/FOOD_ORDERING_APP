@@ -1,0 +1,36 @@
+.qty {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 6px 12px;
+  border: 1px solid tomato;
+  border-radius: 8px;
+}
+
+.qty button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 6px;
+  background: tomato;
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.qty__count {
+  min-width: 24px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.qty__add {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: tomato;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
